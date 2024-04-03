@@ -4,12 +4,13 @@ import { useContext} from "react";
 import { MyContext } from "../context/MyContext";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from 'react-icons/fa';
+import { CarritoContext } from "../context/CarritoContext";
 
 
 
 export const Home = () => {
     const {pizzas} = useContext(MyContext)
-    
+    const { agregarAlCarrito } = useContext(CarritoContext);
         
    
     
@@ -37,7 +38,7 @@ export const Home = () => {
                             <Link to={`/pizza/${pizza.id}`}>
                             <Button  variant="primary">Ver Mas</Button></Link>
                             <Link to={`/pizza2/${pizza.id}`}>
-                            <Button  variant="warning">Añadir <FaShoppingCart/></Button></Link>
+                            <Button onClick={() => agregarAlCarrito(pizza.id)} variant="warning">Añadir <FaShoppingCart/></Button></Link>
                         </div>
                         </CardFooter>
                     </Card>

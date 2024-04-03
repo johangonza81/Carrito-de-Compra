@@ -9,24 +9,33 @@ const ImagenCarrito = () => {
     const { id } = useParams();
     const { pizzas } = useContext(MyContext);
     const { eliminarDelCarrito,carrito,SetCarrito } = useContext(CarritoContext);
+    
     const Newpizza = pizzas.find((pizza) => pizza.id.toString() === (id));
     
-    
+  
     
     
 
     return (
-        <div className="conatienrCardCarro">
-            <div>
+        <div>        
+            {carrito.map((cart)=>{
+            return(
+            <div className="conatienrCardCarro">
+            <div key={cart.id}>
                 <Card className="cardDetalle41">
-                    <Card.Img className="imagenCarrito"  src={carrito.img} />        
+                    <Card.Img className="imagenCarrito"  src={cart.img} />        
                 </Card>
             </div>
             <div className="btnCarro">
-                <Button className="btnCarro2" variant="danger" onClick={() => eliminarDelCarrito(carrito.id)}>-</Button>
-                <Button onClick={() => SetCarrito({...Newpizza,carrito})}className="btnCarro2" variant="primary">+</Button>
+                <Button className="btnCarro2" variant="danger" onClick={() => eliminarDelCarrito(cart.id)}>-</Button>
+                <Button onClick={() => SetCarrito({...carrito,Newpizza})}className="btnCarro2" variant="primary">+</Button>
             </div>
         </div>
+        )
+        }) 
+    } 
+    </div>
+
     );
 };
 
