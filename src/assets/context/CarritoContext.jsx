@@ -4,6 +4,7 @@ export const CarritoContext = createContext();
 
 export const CarritoContextProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
+    const[cantidad,setCantidad]= useState("0")
 
     const agregarAlCarrito = (id) => {
         setCarrito([...carrito, id]);
@@ -14,8 +15,27 @@ export const CarritoContextProvider = ({ children }) => {
         setCarrito(nuevoCarrito);
     };
 
+    const incrementarCantidad = (id) =>{
+        setCantidad(Number(cantidad) + Number(1))
+    }
+
+    const decrementarCantidad = (id) =>{
+        if(Number(cantidad)>Number(0)){
+        setCantidad(Number(cantidad) - Number(1))
+    }
+    }
+
+
     return (
-        <CarritoContext.Provider value={{ carrito, agregarAlCarrito, eliminarDelCarrito,setCarrito }}>
+        <CarritoContext.Provider value={{ 
+            carrito, 
+            agregarAlCarrito,
+             eliminarDelCarrito,
+             setCarrito,
+             cantidad,
+             incrementarCantidad,
+             setCantidad,
+             decrementarCantidad }}>
             {children}
         </CarritoContext.Provider>
     );

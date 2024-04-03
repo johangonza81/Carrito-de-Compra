@@ -8,28 +8,45 @@ import { useContext } from "react";
 const ImagenCarrito = () => {
     const { id } = useParams();
     const { pizzas } = useContext(MyContext);
-    const { eliminarDelCarrito,carrito,SetCarrito } = useContext(CarritoContext);
+    const { carrito,SetCarrito,cantidad,incrementarCantidad,decrementarCantidad } = useContext(CarritoContext);
     
     const Newpizza = pizzas.find((pizza) => pizza.id.toString() === (id));
     
-  
+    const actualizarCarrito = () =>{
+        SetCarrito({...Newpizza,carrito})
+    }
     
     
 
     return (
-        <div>        
+        <div > 
+            <h4 className="detalle">Detalle del Pedio:</h4>       
             {carrito.map((cart)=>{
+               console.log(cart.name) 
             return(
-            <div className="conatienrCardCarro">
-            <div key={cart.id}>
+                
+            <div key={cart.id}>           
+            
+            <div  className="conatienrCardCarro">
+            <div className="primera">
+                
                 <Card className="cardDetalle41">
-                    <Card.Img className="imagenCarrito"  src={cart.img} />        
+                <div>
+                    
+                    <Card.Img className="imagenCarrito"  src={cart.img} /> 
+                </div> 
+                <div>
+                    <h3>{cart.name}</h3>
+                </div> 
                 </Card>
+                    
             </div>
             <div className="btnCarro">
-                <Button className="btnCarro2" variant="danger" onClick={() => eliminarDelCarrito(cart.id)}>-</Button>
-                <Button onClick={() => SetCarrito({...carrito,Newpizza})}className="btnCarro2" variant="primary">+</Button>
+                <Button onClick= {decrementarCantidad}className="btnCarro2" variant="danger" >-</Button>
+                {cantidad}
+                <Button onClick= {() =>{incrementarCantidad(),actualizarCarrito()}} className="btnCarro2" variant="primary">+</Button>
             </div>
+        </div>
         </div>
         )
         }) 

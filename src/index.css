@@ -165,3 +165,12 @@ hr{
   gap:45px
   
 }
+.detalle{
+  margin-left: 10%;
+}
+.primera{
+  display: flex;
+}
+h3{
+  color: black;
+}
