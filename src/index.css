@@ -1,0 +1,167 @@
+
+.navar{
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  display: flex;
+  background-color: rgb(2, 175, 243);
+  
+  
+ 
+}
+.navarr{
+  width: 100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-image: url("../src/imagenes/Fondo\ Pizzas22.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.container{
+  width: 100%;
+}
+
+.active{
+  color:red;
+  
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+.navar2{
+  
+  margin-left: 4%;
+}
+
+.navar3{
+  display:flex;
+  gap: 30px;
+  margin-left: 78%;
+}
+
+h2,p{
+  text-align: center;
+  color:white
+ 
+}
+hr{
+  color:white;
+  border-width: 6px;
+}
+
+.cardPP{
+  margin-left: 10%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  gap: 35px;
+  width: 65rem;
+  height: 150px;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+.hr2{
+  
+  border-width: 3px;
+  color:black;
+}
+
+.btnn{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:15px;
+  
+}
+
+li{
+  color: black;
+  text-align: start;
+}
+
+h4{
+  margin-top: 15px;
+  color: black;
+}
+
+.cardDetalle{
+  width: 24rem;
+  height: 21rem;
+}
+
+.Descripcion{
+
+  display:flex;
+  margin-top: 0.5%;
+  margin-left: 21%;
+}
+
+p{
+  color:black;font-size: 11px;
+}
+h3{
+  text-align: center;
+}
+hr{
+  color:black;
+}
+.titulo{
+  font-size: 15px;
+}
+.tituloIngre{
+  text-align: start;
+}
+
+
+
+.listaDes{
+  font-size: 10px;
+}
+
+.cardDetalle4{
+  width: 24rem;
+  height: 21rem;
+  padding-top: 10%;
+
+}
+.imagenDetalle{
+  
+  background-size: cover;
+  position: absolute;
+  
+}
+
+.Contenedorr{
+  height: 100vh;
+}
+
+.prim{
+  color:white;
+  font-size: 16px;
+}
+.carritoc{
+  text-align: center;
+}
+.imagenCarrito{
+  height: 70px;
+  width: 70px;
+}
+.conatienrCardCarro{
+  display:flex;
+  margin-top: 3%;
+  margin-left: 12%;
+  gap:70%;
+}
+.cardDetalle41{
+  border:none
+}
+.btnCarro{
+  
+  display: flex;
+  gap:45px
+  
+}
